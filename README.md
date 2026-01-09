@@ -1,6 +1,6 @@
 # Expense Tracker Application
 
-A secure and well-structured **Expense & Income Management System** built using **Spring Boot MVC**, **Thymeleaf**, and **MySQL**.  
+A secure and well-structured **Expense & Income Management System** built using **Spring Boot MVC**, **HTML,CSS & JS**, and **MySQL**.  
 This application helps users manage daily expenses and income while maintaining a clear view of their financial balance.
 
 ---
