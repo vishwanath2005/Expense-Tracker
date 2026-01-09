@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav"
+        th:fragment="navbar(showAbout, showIn, showUp, showList, showAdd, showProfile)">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" th:href="@{/}"><i class="fas fa-wallet me-2"></i>Expenses
+                Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto gap-2">
+                    <li th:if="${showAbout == 'yes'}" class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li th:if="${showIn == 'yes'}" class="nav-item">
+                        <a class="btn btn-outline-primary rounded-pill px-4" th:href="@{/showLoginPage}">Sign in</a>
+                    </li>
+                    <li th:if="${showUp == 'yes'}" class="nav-item">
+                        <a class="btn btn-primary rounded-pill px-4" th:href="@{/showRegistrationForm}">Sign up</a>
+                    </li>
+                    <li th:if="${showList == 'yes'}" class="nav-item">
+                        <a class="nav-link" th:href="@{/list}">Dashboard</a>
+                    </li>
+                    <li th:if="${showAdd == 'yes'}" class="nav-item">
+                        <a class="nav-link" th:href="@{/showAdd}"><i class="fas fa-plus me-1"></i>Expense</a>
+                    </li>
+                    <li th:if="${showAdd == 'yes'}" class="nav-item">
+                        <a class="nav-link" th:href="@{/income/showAdd}"><i class="fas fa-plus me-1"></i>Income</a>
+                    </li>
+                    <li th:if="${showProfile == 'yes'}" class="nav-item">
+                        <form th:action="@{/logout}" method="post" class="d-inline">
+                            <button type="submit" class="btn btn-link nav-link text-danger fw-bold">
+                                <i class="fa-solid fa-arrow-right-from-bracket me-1"></i> Logout
+                            </button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</body>
+
+</html>
